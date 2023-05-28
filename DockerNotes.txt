@@ -1,0 +1,15 @@
+pip freeze >requirements.txt //get requiremets from project
+docker ps //show all active containers
+docker ps -a //show all containers
+docker run --name "new container name" -p "PC port : vm port" "image to run container from"
+
+docker file: 
+FROM: what base you want (language/os)
+workdir /app
+copy . app       		               //copy youre current dir to /app 
+RUN pip install -r requirements.txt       // pip/npm install and any cmd commends to run at start
+cmd [python,"./name.py"]                    //run once in container to run the program, list of strings
+build -t "container name" .                  //create/remake  image
+cat Dockerfile                                    // show docker file
+
+more in: https://dockerlabs.collabnix.com/docker/cheatsheet/
